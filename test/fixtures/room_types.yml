@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+   type: MyString
+  cost: 1.5
+  max_people: 1
+
+two:
+   type: MyString
+  cost: 1.5
+  max_people: 1

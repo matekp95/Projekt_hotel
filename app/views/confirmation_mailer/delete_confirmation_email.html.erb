@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+  </head>
+
+  <body>
+    <h1>Dear admin</h1>
+    <p>
+      User: <%= @user.id %> <%= @user.first_name %> <%= @user.last_name %> revoke reservation.<br>
+    </p>
+    <p>
+      Reservation id: <%= @reservation.id %> <br>
+      Reservation from: <%= @reservation.valid_from %> <br>
+      Reservation to: <%= @reservation.valid_to %>
+    </p>
+
+  </body>
+</html>

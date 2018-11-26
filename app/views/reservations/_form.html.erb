@@ -1,0 +1,45 @@
+<%= form_for(@reservation) do |form| %>
+  <% if @reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+      <ul>
+        <% @reservation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="reservation_container">
+  <div class="field">
+    <%= form.label :valid_from %>
+    <%= form.date_field :valid_from, id: :reservation_valid_from %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valid_to %>
+    <%= form.date_field :valid_to, id: :reservation_valid_to %>
+  </div>
+
+  <div class="selector">
+    <%= form.label :num_of_user, 'How many people' %>
+    <%= form.select :num_of_user, @number_of_users %>
+  </div>
+
+  <div class="selector">
+    <%= form.label :room_type, 'Room type' %>
+    <%= form.collection_select(:room_type, RoomType.all, :id, :name, :prompt => 'Please pick room') %>
+  </div>
+  <br>
+  <div id="center_parking">
+    <%= form.check_box :has_parking, :style => "float:left;" %>
+    <%= form.label :has_parking, "Parking spot".html_safe, :style => "float:left;" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.button 'Check room availability' , name: "check",value: "room_availability"%>
+    <%= form.submit %>
+    <%= form.submit "Clear form", :type => "reset" %>
+  </div>
+</div>
+<% end %>

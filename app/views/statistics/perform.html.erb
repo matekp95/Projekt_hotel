@@ -1,0 +1,32 @@
+<div id="text_center">
+  <div id="display_inline">
+    <h1>Statistics to jest perform</h1>
+
+    <%= render "form" %>
+
+    Zajete pokoje od <%= @statistics.valid_from %> do <%= @statistics.valid_to %><br>
+
+    <table align="center">
+      <tr>
+        <th> Room Type</th>
+        <th> Rooms taken</th>
+        <th> Rooms free</th>
+      </tr>
+      <% @room_types.each_with_index do |room, index| %>
+        <tr>
+          <th><%= room.name %></th>
+          <th><%= @statistics.reservations_taken(room.id) %></th>
+          <th><%= RoomType::MAX_EACH_ROOM_COUNT - @statistics.reservations_taken(room.id) %></th>
+        </tr>
+      <% end %>
+    </table>
+
+    Wszystkie zajete pokoje: <%= @reservations_taken %><br>
+    Wszystkie wolne pokoje: <%= @reservations_left %><br>
+
+    Wolne miejsca parkingowych: <%= Parking::AVAILABLE_PARKING_SPOTS - @parkings_taken %><br>
+    Zajete miejsca parkingowych: <%= @parkings_taken %><br>
+
+    Ilość ludzi wizytujących w tym okresie: <%= @people_visited_hotel %>
+  </div>
+</div>

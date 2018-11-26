@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Valid from:</strong>
+  <%= @reservation.valid_from %>
+</p>
+
+<p>
+  <strong>Valid to:</strong>
+  <%= @reservation.valid_to %>
+</p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @reservation.token %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @reservation.user.first_name %>
+</p>
+<p>
+  <strong>Last name:</strong>
+  <%= @reservation.user.last_name %>
+</p>
+
+<p>
+  <strong>Room type:</strong>
+  <%= link_to "#{@reservation.room_type_name}", room_type_path(@reservation.room_type) %>
+</p>
+
+<!--<%#= link_to 'Edit', edit_reservation_path(@reservation) %> |-->
+<%= link_to 'Back', reservations_path %>

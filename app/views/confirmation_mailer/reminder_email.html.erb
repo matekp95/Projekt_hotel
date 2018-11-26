@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+  </head>
+
+  <body>
+    <h1>Dear USER</h1>
+    <p>
+      <%= @user.first_name %> <%= @user.last_name %> !!!!!!!!!<br>
+    </p>
+    <p>
+      We want to remind you that you have holidays in our hotel! :D <br>
+      Reservation from: <%= @reservation.valid_from %> <br>
+      Reservation to: <%= @reservation.valid_to %>
+    </p>
+
+  </body>
+</html>

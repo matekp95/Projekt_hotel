@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valid_from: 2018-10-16
+  valid_to: 2018-10-16
+  token: MyString
+  user: one
+  room_type: 1
+
+two:
+  valid_from: 2018-10-16
+  valid_to: 2018-10-16
+  token: MyString
+  user: two
+  room_type: 1

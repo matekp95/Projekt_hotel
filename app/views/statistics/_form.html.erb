@@ -1,0 +1,30 @@
+<%= form_for(@statistics) do |form| %>
+  <% if @statistics.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@statistics.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+      <ul>
+        <% @statistics.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="reservation_container">
+  <div class="field">
+    <%= form.label :valid_from %>
+    <%= form.date_field :valid_from, id: :reservation_valid_from %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valid_to %>
+    <%= form.date_field :valid_to, id: :reservation_valid_to %>
+  </div>
+
+
+  <br>
+  <div class="actions">
+    <%= form.submit "Filtruj"%>
+  </div>
+</div>
+<% end %>

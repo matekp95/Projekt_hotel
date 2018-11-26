@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valid_from: 2018-10-16
+  valid_to: 2018-10-16
+  reservation: one
+
+two:
+  valid_from: 2018-10-16
+  valid_to: 2018-10-16
+  reservation: two

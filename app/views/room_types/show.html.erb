@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong> type:</strong>
+  <%= @room_type.name %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @room_type.cost %>
+</p>
+
+<p>
+  <strong>Max people:</strong>
+  <%= @room_type.max_people %>
+</p>
+<% if current_user.present? && current_user.user_role == 'admin' %>
+<%= link_to 'Edit', edit_room_type_path(@room_type) %>
+<% end %>
+<%= link_to 'Back', room_types_path %>

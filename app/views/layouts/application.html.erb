@@ -9,6 +9,20 @@
   </head>
 
   <body>
+<div id="container">
+  <%= render "shared/top_bar" %>
+  <div id="container">
+    <div id="text_center">
+  <% if current_user.present? %>
+
+      <% if current_user.user_role == 'admin' %>
+      <%#= render "shared/admins_bar" %>
+      <% end %>
+    <% end %>
+
     <%= yield %>
+    </div></div>
+    <%= render "shared/bottom_bar" %>
+</div>
   </body>
 </html>

@@ -1,0 +1,32 @@
+<%= form_with(model: room_type, local: true) do |form| %>
+  <% if room_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room_type.errors.count, "error") %> prohibited this room_type from being saved:</h2>
+
+      <ul>
+      <% room_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :room_type_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost %>
+    <%= form.text_field :cost, id: :room_type_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_people %>
+    <%= form.number_field :max_people, id: :room_type_max_people %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reservations</h1>
+<div id="text_center">
+  <div id="display_inline">
+    <table>
+      <thead>
+      <tr>
+        <th>Valid from</th>
+        <th>Valid to</th>
+        <th>Token</th>
+        <th>User</th>
+        <th>Room type</th>
+        <th>Parking</th>
+        <th colspan="2">Actions</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <td><%= reservation.valid_from %></td>
+          <td><%= reservation.valid_to %></td>
+          <td><%= reservation.token %></td>
+          <td><%= link_to "#{reservation.user.first_name} #{reservation.user.last_name}", user_path(reservation.user) %></td>
+          <% if reservation.room_type %>
+            <td><%= link_to "#{reservation.room_type_name}", room_type_path(reservation.room_type) %></td>
+          <% else %>
+            <td>No room type was choosen</td>
+          <% end %>
+          <% if reservation.has_parking %>
+            <td>Yes</td>
+          <% else %>
+            <td>No</td>
+          <% end %>
+          <td><%= link_to 'Show', reservation %></td>
+          <!--        <td><%#= link_to 'Edit', edit_reservation_path(reservation) %></td>-->
+          <td><%= link_to 'Destroy', reservation, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Reservation', new_reservation_path %>
+
+  </div>
+</div>

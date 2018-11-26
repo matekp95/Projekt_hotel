@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="projekt_hotel">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.9">
+    <root id="1">
+      <ServerVersion>10.5</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="lumo_development">
+      <ObjectId>43803</ObjectId>
+    </database>
+    <database id="3" parent="1" name="lumo_test">
+      <ObjectId>43804</ObjectId>
+    </database>
+    <database id="4" parent="1" name="mateusz">
+      <ObjectId>16385</ObjectId>
+    </database>
+    <database id="5" parent="1" name="moment_development">
+      <ObjectId>51586</ObjectId>
+    </database>
+    <database id="6" parent="1" name="moment_test">
+      <ObjectId>51587</ObjectId>
+    </database>
+    <database id="7" parent="1" name="postgres">
+      <ObjectId>13267</ObjectId>
+      <Comment>default administrative connection database</Comment>
+    </database>
+    <database id="8" parent="1" name="projekt_hotel_development">
+      <ObjectId>52417</ObjectId>
+      <IntrospectionStateNumber>115</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="9" parent="1" name="projekt_hotel_test">
+      <ObjectId>52418</ObjectId>
+    </database>
+    <database id="10" parent="1" name="template1">
+      <ObjectId>51176</ObjectId>
+    </database>
+    <database id="11" parent="1" name="versum_development">
+      <ObjectId>24156</ObjectId>
+    </database>
+    <database id="12" parent="1" name="versum_test">
+      <ObjectId>46441</ObjectId>
+    </database>
+    <role id="13" parent="1" name="mateusz">
+      <ObjectId>16384</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="14" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="15" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="16" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="17" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="18" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="19" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <role id="20" parent="1" name="projekt_hotel">
+      <ObjectId>52416</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="21" parent="1" name="rails">
+      <ObjectId>43802</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="22" parent="1" name="versum">
+      <ObjectId>16386</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <schema id="23" parent="8" name="information_schema">
+      <ObjectId>12976</ObjectId>
+    </schema>
+    <schema id="24" parent="8" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+    </schema>
+    <schema id="25" parent="8" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="26" parent="8" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+    </schema>
+    <schema id="27" parent="8" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="28" parent="8" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <IntrospectionTimestamp>2018-11-03.19:28:13.186</IntrospectionTimestamp>
+      <IntrospectionStateNumber>72599</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="29" parent="8" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="30" parent="8" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="31" parent="8" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="32" parent="8" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="33" parent="8" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="34" parent="8" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <sequence id="35" parent="28" name="delayed_jobs_id_seq">
+      <ObjectId>52644</ObjectId>
+      <StateNumber>72599</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="36" parent="28" name="parkings_id_seq">
+      <ObjectId>52565</ObjectId>
+      <StateNumber>67402</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="37" parent="28" name="reservations_id_seq">
+      <ObjectId>52548</ObjectId>
+      <StateNumber>67401</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="38" parent="28" name="room_types_id_seq">
+      <ObjectId>52537</ObjectId>
+      <StateNumber>67400</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="39" parent="28" name="users_id_seq">
+      <ObjectId>52526</ObjectId>
+      <StateNumber>67399</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <table id="40" parent="28" name="ar_internal_metadata">
+      <ObjectId>52427</ObjectId>
+      <StateNumber>67368</StateNumber>
+    </table>
+    <table id="41" parent="28" name="delayed_jobs">
+      <ObjectId>52646</ObjectId>
+      <StateNumber>72599</StateNumber>
+    </table>
+    <table id="42" parent="28" name="parkings">
+      <ObjectId>52567</ObjectId>
+      <StateNumber>67441</StateNumber>
+    </table>
+    <table id="43" parent="28" name="reservations">
+      <ObjectId>52550</ObjectId>
+      <StateNumber>67412</StateNumber>
+    </table>
+    <table id="44" parent="28" name="room_types">
+      <ObjectId>52539</ObjectId>
+      <StateNumber>67400</StateNumber>
+    </table>
+    <table id="45" parent="28" name="schema_migrations">
+      <ObjectId>52419</ObjectId>
+      <StateNumber>67367</StateNumber>
+    </table>
+    <table id="46" parent="28" name="users">
+      <ObjectId>52528</ObjectId>
+      <StateNumber>67404</StateNumber>
+    </table>
+    <column id="47" parent="40" name="key">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67368</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="48" parent="40" name="value">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>67368</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="49" parent="40" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67368</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="50" parent="40" name="updated_at">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67368</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="51" parent="40" name="ar_internal_metadata_pkey">
+      <ObjectId>52433</ObjectId>
+      <ColNames>key</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="40" name="ar_internal_metadata_pkey">
+      <ObjectId>52434</ObjectId>
+      <ColNames>key</ColNames>
+      <UnderlyingIndexName>ar_internal_metadata_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="41" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>72599</StateNumber>
+      <DefaultExpression>nextval(&apos;delayed_jobs_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>delayed_jobs_id_seq</SequenceName>
+    </column>
+    <column id="54" parent="41" name="priority">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>72599</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="55" parent="41" name="attempts">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>72599</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="56" parent="41" name="handler">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>72599</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="57" parent="41" name="last_error">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>72599</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="58" parent="41" name="run_at">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>72599</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="59" parent="41" name="locked_at">
+      <Position>7</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>72599</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="60" parent="41" name="failed_at">
+      <Position>8</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>72599</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="61" parent="41" name="locked_by">
+      <Position>9</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>72599</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="62" parent="41" name="queue">
+      <Position>10</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>72599</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="63" parent="41" name="created_at">
+      <Position>11</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>72599</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="64" parent="41" name="updated_at">
+      <Position>12</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>72599</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="65" parent="41" name="delayed_jobs_pkey">
+      <ObjectId>52655</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="66" parent="41" name="delayed_jobs_priority">
+      <ObjectId>52657</ObjectId>
+      <ColNames>priority
+run_at</ColNames>
+    </index>
+    <key id="67" parent="41" name="delayed_jobs_pkey">
+      <ObjectId>52656</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>delayed_jobs_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="68" parent="42" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67402</StateNumber>
+      <DefaultExpression>nextval(&apos;prakings_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>prakings_id_seq</SequenceName>
+    </column>
+    <column id="69" parent="42" name="valid_from">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>67402</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="70" parent="42" name="valid_to">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>67402</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="71" parent="42" name="reservation_id">
+      <Position>4</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>67402</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="72" parent="42" name="created_at">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67402</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="73" parent="42" name="updated_at">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67402</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="74" parent="42" name="parkings_pkey">
+      <ObjectId>52571</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="75" parent="42" name="index_parkings_on_reservation_id">
+      <ObjectId>52578</ObjectId>
+      <ColNames>reservation_id</ColNames>
+    </index>
+    <key id="76" parent="42" name="parkings_pkey">
+      <ObjectId>52572</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>parkings_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="77" parent="42" name="fk_rails_ac889158f5">
+      <ObjectId>52573</ObjectId>
+      <ColNames>reservation_id</ColNames>
+      <RefTableId>52550</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>reservations</RefTableName>
+      <RefKeyName>reservations_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="78" parent="43" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67401</StateNumber>
+      <DefaultExpression>nextval(&apos;reservations_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>reservations_id_seq</SequenceName>
+    </column>
+    <column id="79" parent="43" name="valid_from">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>67401</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="80" parent="43" name="valid_to">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>67401</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="81" parent="43" name="token">
+      <Position>4</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>67401</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="82" parent="43" name="user_id">
+      <Position>5</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>67401</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="83" parent="43" name="room_type">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>67401</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="84" parent="43" name="created_at">
+      <Position>7</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67401</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="85" parent="43" name="updated_at">
+      <Position>8</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67401</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="86" parent="43" name="num_of_user">
+      <Position>9</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>67411</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="87" parent="43" name="has_parking">
+      <Position>10</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>67412</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <index id="88" parent="43" name="reservations_pkey">
+      <ObjectId>52557</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="89" parent="43" name="index_reservations_on_user_id">
+      <ObjectId>52564</ObjectId>
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="90" parent="43" name="reservations_pkey">
+      <ObjectId>52558</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>reservations_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="91" parent="43" name="fk_rails_48a92fce51">
+      <ObjectId>52559</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableId>52528</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="92" parent="44" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67400</StateNumber>
+      <DefaultExpression>nextval(&apos;room_types_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>room_types_id_seq</SequenceName>
+    </column>
+    <column id="93" parent="44" name="name">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>67403</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="94" parent="44" name="cost">
+      <Position>3</Position>
+      <DataType>double precision|0s</DataType>
+      <StateNumber>67400</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <column id="95" parent="44" name="max_people">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>67400</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="96" parent="44" name="created_at">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67400</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="97" parent="44" name="updated_at">
+      <Position>6</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67400</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="98" parent="44" name="room_types_pkey">
+      <ObjectId>52546</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="99" parent="44" name="room_types_pkey">
+      <ObjectId>52547</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>room_types_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="100" parent="45" name="version">
+      <Position>1</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67367</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="101" parent="45" name="schema_migrations_pkey">
+      <ObjectId>52425</ObjectId>
+      <ColNames>version</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="102" parent="45" name="schema_migrations_pkey">
+      <ObjectId>52426</ObjectId>
+      <ColNames>version</ColNames>
+      <UnderlyingIndexName>schema_migrations_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="103" parent="46" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67399</StateNumber>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>20</TypeId>
+      <SequenceName>users_id_seq</SequenceName>
+    </column>
+    <column id="104" parent="46" name="first_name">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>67399</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="105" parent="46" name="last_name">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>67399</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="106" parent="46" name="email">
+      <Position>4</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>67399</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="107" parent="46" name="password">
+      <Position>5</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>67399</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="108" parent="46" name="user_role">
+      <Position>6</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>67399</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="109" parent="46" name="created_at">
+      <Position>7</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67399</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="110" parent="46" name="updated_at">
+      <Position>8</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67399</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="111" parent="46" name="encrypted_password">
+      <Position>9</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67404</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="112" parent="46" name="reset_password_token">
+      <Position>10</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>67404</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="113" parent="46" name="reset_password_sent_at">
+      <Position>11</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>67404</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="114" parent="46" name="remember_created_at">
+      <Position>12</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>67404</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="115" parent="46" name="sign_in_count">
+      <Position>13</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>67404</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="116" parent="46" name="current_sign_in_at">
+      <Position>14</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>67404</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="117" parent="46" name="last_sign_in_at">
+      <Position>15</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>67404</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="118" parent="46" name="current_sign_in_ip">
+      <Position>16</Position>
+      <DataType>inet|0s</DataType>
+      <StateNumber>67404</StateNumber>
+      <TypeId>869</TypeId>
+    </column>
+    <column id="119" parent="46" name="last_sign_in_ip">
+      <Position>17</Position>
+      <DataType>inet|0s</DataType>
+      <StateNumber>67404</StateNumber>
+      <TypeId>869</TypeId>
+    </column>
+    <index id="120" parent="46" name="users_pkey">
+      <ObjectId>52535</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="121" parent="46" name="index_users_on_email">
+      <ObjectId>52595</ObjectId>
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="122" parent="46" name="index_users_on_reset_password_token">
+      <ObjectId>52596</ObjectId>
+      <ColNames>reset_password_token</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="123" parent="46" name="users_pkey">
+      <ObjectId>52536</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

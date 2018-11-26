@@ -1,0 +1,31 @@
+
+<!--  <div id ="options">-->
+    <%#= render "shared/options_bar" %>
+<!--  </div>-->
+<div id="text_center">
+<div id="display_inline">
+  <div id="sidebar">
+    Contact: 517******<br>
+    Email: example****@gmail.com
+    <br><br>
+    Reserve today!<br>
+
+    <p id="notice"><%= flash[:notice] %></p>
+    <%= render "form"%>
+  </div>
+</div>
+</div>
+<br>
+
+<%# if user_signed_in? %>
+<!--  <li><%#= link_to 'Bookings', bookings_path,class: "hvr-bounce-to-bottom" %></li>-->
+<!--  <li>-->
+<!--    <a class="hvr-bounce-to-bottom" ><%#= current_user.email %></a>-->
+<!--  </li>-->
+<!--  <li><%#= link_to 'Log out', destroy_user_session_path,class: "hvr-bounce-to-bottom", method: :delete %></li>-->
+
+<!--  </li>-->
+<%# else %>
+<!--  <li><a href="/users/sign_up" class="hvr-bounce-to-bottom"> Sign Up</a></li>-->
+<!--  <li><a href="/users/sign_in" class="hvr-bounce-to-bottom"> Login</a></li>-->
+<%# end %>

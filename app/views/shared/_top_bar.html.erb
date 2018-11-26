@@ -1,0 +1,70 @@
+<div id="top_bar">
+  <h1> WITAJ W NASZYM HOTELU </h1>
+</div>
+
+
+<div class="nav">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><a href="/room_types">Rooms</a></li>
+
+
+    </li>
+    <% if user_signed_in? %>
+      <li><%= link_to 'My reservations', reservations_path %></li>
+      <% if current_user.user_role == 'admin' %>
+        <li>
+          <%= link_to 'Admin panel', statistics_path %>
+          <ul>
+            <li><%= link_to "Parking", parkings_path %></li>
+            <li><%= link_to "New room", new_room_type_path %></li>
+            <li> <%= link_to "Room list", room_types_path %></li>
+            <li> <%= link_to "Users list", users_path %></li>
+            <li> <%= link_to "All reservations", admin_reservations_path %></li>
+            <li><%= link_to "Statistics", new_statistic_path %></li>
+          </ul>
+        </li>
+      <% end %>
+      <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <li><a href="/users/sign_up">Sign Up</a></li>
+      <li><a href="/users/sign_in">Login</a></li>
+      </li>
+    <% end %>
+  </ol>
+
+</div>
+
+<div id="options">
+  <% if user_signed_in? %>
+    <!--    <div class="option"><%#= link_to 'Log out', destroy_user_session_path, method: :delete %></div>-->
+    <div class="option_logged">Signed as: <%= current_user.first_name %> <%= current_user.last_name %>
+      (<%= current_user.email %>)
+    </div>
+    <%# if current_user.user_role == 'admin' %>
+    <!--      <div class="option">-->
+    <!--        <ol>-->
+    <!--          <li>-->
+    <%#= link_to 'Admin panel', statistics_path %>
+    <!--            <ul>-->
+    <!--              <li><%#= link_to "Parking", parkings_path %></li>-->
+    <!--              <li><%#= link_to "New room", new_room_type_path %></li>-->
+    <!--              <li> <%#= link_to "Room list", room_types_path %></li>-->
+    <!--              <li> <%#= link_to "Users list", users_path %></li>-->
+    <!--              <li><%#= link_to "Statistics", new_statistic_path %></li>-->
+    <!--            </ul>-->
+    <!--          </li>-->
+    <!--        </ol>-->
+    <!--      </div>-->
+    <%# end %>
+
+    <!--    <div class="option"><%#= link_to 'My reservations', reservations_path %></div>-->
+    <%# else %>
+    <!--    <div class="option"><a href="/users/sign_in">Login</a></div>-->
+    <!--    <div class="option"><a href="/users/sign_up">Sign Up</a></div>-->
+  <% end %>
+  <div id="just_space"></div>
+  <!--  <div class="option"><a href="/room_types">Rooms</a></div>-->
+  <!--  <div class="option"><a href="/">Home</a></div>-->
+  <div style="clear:both"></div>
+</div>

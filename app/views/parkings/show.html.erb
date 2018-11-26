@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Valid from:</strong>
+  <%= @parking.valid_from %>
+</p>
+
+<p>
+  <strong>Valid to:</strong>
+  <%= @parking.valid_to %>
+</p>
+
+<p>
+  <strong>Reservation:</strong>
+  <%= link_to "#{@parking.reservation.user.first_name} #{@parking.reservation.user.last_name}", user_path(@parking.reservation.user) %>
+</p>
+
+<%= link_to 'Edit', edit_parking_path(@parking) %> |
+<%= link_to 'Back', parkings_path %>
