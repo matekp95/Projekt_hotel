@@ -1,5 +1,5 @@
 class ConfirmationMailer < ApplicationMailer
-  default from: 'dupa@domena.pl'
+  default from: 'hotel@inzynierka.pl'
 
   def confirmation_email
     @reservation = params[:reservation]
@@ -11,7 +11,7 @@ class ConfirmationMailer < ApplicationMailer
   def delete_confirmation_email
     @reservation = params[:reservation]
     @user = @reservation.user
-    mail(to: @user.email, subject: 'Cancelled reservation')
+    mail(to: 'administrator_hotelu@inzynierka.pl', subject: 'Cancelled reservation')
   end
 
   def reminder_email
