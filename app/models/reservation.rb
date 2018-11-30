@@ -10,6 +10,7 @@ class Reservation < ApplicationRecord
   validate :date_correctness
   validate :period
   validate :room_availability
+  validate :parking_availability
 
   def room_type_name
     RoomType.find(room_type).name if room_type.present?
@@ -59,6 +60,12 @@ class Reservation < ApplicationRecord
   def room_availability
     if Reservation.where('room_type = ? AND valid_from <= ? AND valid_to >= ?', room_type.to_i, valid_to, valid_from).count >= RoomType::MAX_EACH_ROOM_COUNT
       self.errors.add(:room_type, "is not available in this period of time.")
+    end
+  end
+
+  def parking_availability
+    if Parking.where('valid_from <= ? AND valid_to >= ?', valid_to, valid_from).count >= Parking::AVAILABLE_PARKING_SPOTS
+      self.errors.add(:base, "All parkings are taken in this period of time.")
     end
   end
 end
