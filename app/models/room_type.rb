@@ -17,7 +17,12 @@ class RoomType < ApplicationRecord
     throw(:abort) if errors.present?
   end
 
+  before_update do
+    room_with_reservation?
+    throw(:abort) if errors.present?
+  end
+
   def room_with_reservation?
-    errors.add(:room_type, " cannot be deleted. It has reservations.") if Reservation.where(room_type: id).count > 0
+    errors.add(:room_type, " cannot be managed. It has reservations.") if Reservation.where(room_type: id).count > 0
   end
 end

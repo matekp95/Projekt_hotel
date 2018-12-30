@@ -11,7 +11,8 @@ class ConfirmationMailer < ApplicationMailer
   def delete_confirmation_email
     @reservation = params[:reservation]
     @user = @reservation.user
-    mail(to: 'administrator_hotelu@inzynierka.pl', subject: 'Cancelled reservation')
+    mails = User.where(user_role: 'admin').pluck(:email)
+    mail(to: mails, subject: 'Cancelled reservation')
   end
 
   def reminder_email

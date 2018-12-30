@@ -1,10 +1,10 @@
 <div id="text_center">
   <div id="display_inline">
-    <h1>Statistics to jest perform</h1>
+    <h1>Statistics</h1>
 
     <%= render "form" %>
 
-    Zajete pokoje od <%= @statistics.valid_from %> do <%= @statistics.valid_to %><br>
+    Rooms taken from <%= @statistics.valid_from %> do <%= @statistics.valid_to %><br>
 
     <table align="center">
       <tr>
@@ -16,17 +16,21 @@
         <tr>
           <th><%= room.name %></th>
           <th><%= @statistics.reservations_taken(room.id) %></th>
-          <th><%= RoomType::MAX_EACH_ROOM_COUNT - @statistics.reservations_taken(room.id) %></th>
+          <% if RoomType::MAX_EACH_ROOM_COUNT - @statistics.reservations_taken(room.id) < 0 %>
+            <th>0</th>
+          <% else %>
+            <th><%= RoomType::MAX_EACH_ROOM_COUNT - @statistics.reservations_taken(room.id) %></th>
+          <% end %>
         </tr>
       <% end %>
     </table>
 
-    Wszystkie zajete pokoje: <%= @reservations_taken %><br>
-    Wszystkie wolne pokoje: <%= @reservations_left %><br>
+   All taken rooms: <%= @reservations_taken %><br>
+    All free rooms: <%= @reservations_left %><br>
 
-    Wolne miejsca parkingowych: <%= Parking::AVAILABLE_PARKING_SPOTS - @parkings_taken %><br>
-    Zajete miejsca parkingowych: <%= @parkings_taken %><br>
+    Free parkings spots: <%= Parking::AVAILABLE_PARKING_SPOTS - @parkings_taken %><br>
+    Taken parking spots: <%= @parkings_taken %><br>
 
-    Ilość ludzi wizytujących w tym okresie: <%= @people_visited_hotel %>
+    Amount of people who visited hotel: <%= @people_visited_hotel %>
   </div>
 </div>

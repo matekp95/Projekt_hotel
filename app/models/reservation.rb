@@ -10,7 +10,7 @@ class Reservation < ApplicationRecord
   validate :date_correctness
   validate :period
   validate :room_availability
-  validate :parking_availability
+  validate :parking_availability if :has_parking == '1'
 
   def room_type_name
     RoomType.find(room_type).name if room_type.present?
@@ -29,7 +29,7 @@ class Reservation < ApplicationRecord
   def number_of_users
     unless self.errors.any?
       if RoomType.find(room_type.to_i).max_people < num_of_user
-        self.errors.add(:num_of_user, "Too many people")
+        self.errors.add(:num_of_user, "- too many people")
       end
     end
   end

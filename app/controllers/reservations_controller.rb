@@ -42,13 +42,13 @@ class ReservationsController < ApplicationController
     @max_users = RoomType.all.pluck(:max_people).max
     @number_of_users = generate_hash
     if params[:check] == 'room_availability'
-
       if @reservation.valid?
         redirect_to root_path, notice: 'Room is available.'
       else
         redirect_to root_path, notice: 'Room is not available.'
       end
     else
+      authenticate_user!
       respond_to do |format|
         if @reservation.save
           if params['reservation']['has_parking'].to_i == 1
